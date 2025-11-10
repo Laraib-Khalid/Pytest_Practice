@@ -1,0 +1,24 @@
+pip install pytest
+
+To check all markers:
+pytest --markers
+
+To run pytest:
+pytest
+
+To run specific test:
+pytest -v pytest/test_markers.py::test_data2
+
+pytest -rA -v pytest/test_markers.py::test_data2
+
+
+Exclude a marker (NOT condition):
+pytest -v -m "not smoke"
+
+| Command                               | Meaning                             |
+| ------------------------------------- | ----------------------------------- |
+| `pytest -v -m "smoke"`                | Run only smoke tests                |
+| `pytest -v -m "regression"`           | Run only regression tests           |
+| `pytest -v -m "smoke or regression"`  | Run both smoke and regression tests |
+| `pytest -v -m "smoke and regression"` | Run only tests having both markers  |
+| `pytest -v -m "not regression"`       | Run all except regression tests     |
